@@ -110,6 +110,18 @@ local config = function()
 		root_dir = util.root_pattern("go.work", "go.mod", "gotmpl"),
 	})
 
+	-- qml
+	lspconfig.qmlls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "qml" },
+		cmd = { "qmlls" },
+		single_file_support = true,
+		root_dir = function(fname)
+			return lspconfig.util.find_git_ancestor(fname)
+		end,
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -139,7 +151,7 @@ local config = function()
 				lua = { luacheck, stylua },
 				python = { flake8, black },
 				cpp = { clang_format },
-				go = { golangci_lint, gofumpt},
+				go = { golangci_lint, gofumpt },
 			},
 		},
 	})

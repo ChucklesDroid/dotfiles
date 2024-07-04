@@ -1,7 +1,11 @@
 local opt = vim.opt
 
 -- Tab operations
-opt.wrap = false
+opt.wrap = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 
 -- Search operation
 opt.incsearch = true
@@ -13,7 +17,7 @@ opt.hlsearch = false
 opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true
-opt.colorcolumn = '100'
+opt.colorcolumn = "100"
 opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
@@ -34,5 +38,6 @@ opt.iskeyword:append(".")
 opt.mouse:append("a")
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true
-opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+opt.guicursor =
+	"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 opt.encoding = "UTF-8"

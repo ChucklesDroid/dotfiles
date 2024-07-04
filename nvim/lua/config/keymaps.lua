@@ -32,3 +32,28 @@ vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { noremap = false })
 -- Indentation
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
+
+-- Change buffers
+keymap.set("n", "<C-n>", ":bnext<CR>")
+keymap.set("n", "<C-p>", ":bprevious<CR>")
+keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>") -- close the buffer
+
+-- TODO jumping
+keymap.set("n", "]t", function()
+	require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+keymap.set("n", "[t", function()
+	require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+-- TODO jumping: You can also specify a list of valid jump keywords
+-- keymap.set("n", "]t", function()
+-- 	require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
+-- end, { desc = "Next error/warning todo comment" })
+
+-- Neogit
+keymap.set('n', "<C-s>", ":Neogit<CR>", opts) --open default neogit window
+
+-- Diffview
+keymap.set('n', "<C-d>", ":DiffviewOpen<CR>", opts)
