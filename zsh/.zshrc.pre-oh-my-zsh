@@ -1,0 +1,17 @@
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' max-errors 1
+zstyle :compinstall filename '/home/aakarsh/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+# Vim bindings
+bindkey -v 
+
+# Go binding
+PATH=$PATH:/usr/local/go/bin
