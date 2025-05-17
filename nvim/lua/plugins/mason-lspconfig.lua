@@ -2,7 +2,6 @@ local opts = {
 	ensure_installed = {
 		"efm",
 		"lua_ls",
-		"pyright",
 		"clangd",
 		"gopls",
 	},

@@ -1,3 +1,5 @@
+-- To enable use ":TransparentEnable"
+
 return {
 	"xiyaowong/transparent.nvim",
 	lazy = false,

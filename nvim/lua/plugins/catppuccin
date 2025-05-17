@@ -1,0 +1,12 @@
+return { 
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    -- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+    config = function()
+        require('catppuccin').setup({
+            flavour = "mocha",
+        })
+    end
+}

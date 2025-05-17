@@ -40,5 +40,8 @@ local opts = {
 	},
 }
 
+-- Disabling bottom lualine status after moving it to top
+vim.opt.laststatus = 0
+
 require("lazy").setup("plugins", opts)
 

@@ -1,13 +1,13 @@
 local config = function()
-	-- local theme = require("lualine.themes.nightfox")
-	-- local theme = require("lualine.themes.tokyonight")
+	-- local theme = require("lualine.themes.iceberg")
+	local theme = require("lualine.themes.papercolor_light")
 
 	-- set bg transparency in all mode
-	-- theme.normal.c.bg = nil
-	-- theme.insert.c.bg = nil
-	-- theme.visual.c.bg = nil
-	-- theme.replace.c.bg = nil
-	-- theme.command.c.bg = nil
+	-- theme.normal.bg = nil
+	-- theme.insert.bg = nil
+	-- theme.visual.bg = nil
+	-- theme.replace.bg = nil
+	-- theme.command.bg = nil
 
 	require("lualine").setup({
 		options = {
@@ -16,12 +16,25 @@ local config = function()
 		},
 		tabline = {
 			lualine_a = { "mode" },
-			lualine_b = { "buffers" },
-			lualine_x = { "encoding", "fileformat", "filetype" },
-			lualine_y = { "progress" },
+            lualine_b = { "branch" },
+            lualine_c = { "buffers" },
+			lualine_x = { "filetype", "encoding" },
+			lualine_y = { "lsp_status" },
 			lualine_z = { "location" },
 		},
-		sections = {},
+        sections = {
+            lualine_a = { "progress" },
+            lualine_b = { "diff", "diagnostics" , "file_status" },
+            lualine_c = {
+                {
+                    'filename',
+                    path = 1,
+                }
+            },
+            lualine_x = {},
+            lualine_y = {},
+            lualine_z = {},
+        },
 	})
 end
 

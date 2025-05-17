@@ -1,3 +1,5 @@
+-- To check config for attached lsp's-> :help lspconfig-all
+
 local config = function()
 	-- require("neoconf").setup({})
 	local lspconfig = require("lspconfig")
@@ -87,6 +89,8 @@ local config = function()
 			"--offset-encoding=utf-16",
 			"--clang-tidy",
 			"--header-insertion=iwyu",
+            -- "--ferror-limit=0",
+            -- "--log=verbose",
 		},
 		init_options = {
 			clangdFileStatus = true, -- provides information about activity on clangd’s per-file worker thread
@@ -114,8 +118,13 @@ local config = function()
 	lspconfig.qmlls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { "qml" },
-		cmd = { "qmlls" },
+		filetypes = { "qml", "qmljs" },
+		cmd = {
+            "qmlls",
+            -- "--build-dir",
+            -- "$QMLLS_BUILD_DIRS",
+            "--no-cmake-calls",
+        },
 		single_file_support = true,
 		root_dir = function(fname)
 			return lspconfig.util.find_git_ancestor(fname)

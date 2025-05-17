@@ -2,9 +2,9 @@
 
 keymap = vim.keymap
 
--- Directory Navigation
-keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>b", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+-- Directory Navigation (related to nvim-tree)
+-- keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
+-- keymap.set("n", "<leader>b", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Window and Pane Navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts) --navigate left
@@ -57,3 +57,6 @@ keymap.set('n', "<C-s>", ":Neogit<CR>", opts) --open default neogit window
 
 -- Diffview
 keymap.set('n', "<C-d>", ":DiffviewOpen<CR>", opts)
+
+-- Oil
+keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
